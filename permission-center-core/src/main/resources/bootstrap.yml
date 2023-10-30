@@ -1,0 +1,9 @@
+app:
+  name: permission-center
+  env: ${APP_ENV:dev}
+
+spring:
+  profiles:
+    active: ${app.env}
+  application:
+    name: ${app.name}
