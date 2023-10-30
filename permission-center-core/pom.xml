@@ -40,7 +40,7 @@
 
         <dependency>
             <groupId>fun.pullock</groupId>
-            <artifactId>general-model-starter</artifactId>
+            <artifactId>general-model-spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
@@ -56,6 +56,11 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 
