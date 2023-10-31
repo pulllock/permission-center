@@ -3,6 +3,7 @@ package fun.pullock.permission.core.dao.mapper;
 import fun.pullock.permission.core.dao.model.UserDO;
 
 public interface UserMapper {
+
     int deleteByPrimaryKey(Long id);
 
     int insert(UserDO row);
@@ -14,4 +15,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(UserDO row);
 
     int updateByPrimaryKey(UserDO row);
+
+    UserDO selectByEmail(String email);
 }
