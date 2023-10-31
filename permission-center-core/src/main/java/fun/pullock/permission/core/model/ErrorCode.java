@@ -14,6 +14,7 @@ public enum ErrorCode implements BaseErrorCode {
     SYSTEM_ADD_PARAM_NULL(100, 2, 1, "新增业务系统参数为空"),
     SYSTEM_ADD_CODE_NULL(100, 2, 2, "新增业务系统编码为空"),
     SYSTEM_ADD_NAME_NULL(100, 2, 3, "新增业务系统名称为空"),
+    SYSTEM_ADD_CODE_DUPLICATE(100, 2, 4, "新增业务系统编码重复"),
     ;
 
     static final int PERMISSION_CENTER_SYSTEM_CODE = 1000;

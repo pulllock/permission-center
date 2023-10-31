@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/admin/system")
-public class SystemController {
+public class SystemController extends AdminBaseController {
 
     @Resource
     private SystemService systemService;
@@ -36,7 +36,6 @@ public class SystemController {
             throw new ServiceException(ErrorCode.SYSTEM_ADD_NAME_NULL);
         }
 
-        // TODO
-        return null;
+        return new Result<>(systemService.add(param, operator()));
     }
 }

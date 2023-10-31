@@ -14,4 +14,12 @@ public class SystemManager {
     public SystemDO queryById(Long id) {
         return systemDao.queryById(id);
     }
+
+    public SystemDO queryByCode(String code) {
+        return systemDao.queryByCode(code);
+    }
+
+    public Boolean add(SystemDO newSystem) {
+        return systemDao.add(newSystem);
+    }
 }

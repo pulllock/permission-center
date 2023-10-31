@@ -14,4 +14,12 @@ public class SystemDao {
     public SystemDO queryById(Long id) {
         return systemMapper.selectByPrimaryKey(id);
     }
+
+    public SystemDO queryByCode(String code) {
+        return systemMapper.selectByCode(code);
+    }
+
+    public Boolean add(SystemDO newSystem) {
+        return systemMapper.insert(newSystem) == 1;
+    }
 }
