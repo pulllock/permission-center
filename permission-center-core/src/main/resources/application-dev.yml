@@ -25,3 +25,8 @@ mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mappers/fun/pullock/permission/core/dao/mapper/*.xml
   type-aliases-package: fun.pullock.permission.core.dao.model
+
+general:
+  starter:
+    log:
+      enable: true
