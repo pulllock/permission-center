@@ -1,7 +1,7 @@
 package fun.pullock.permission.core.service;
 
 import fun.pullock.general.model.ServiceException;
-import fun.pullock.permission.core.dao.model.UserDO;
+import fun.pullock.permission.core.repository.model.UserDO;
 import fun.pullock.permission.core.manager.UserManager;
 import fun.pullock.permission.core.model.ErrorCode;
 import fun.pullock.permission.core.model.admin.LoginParam;

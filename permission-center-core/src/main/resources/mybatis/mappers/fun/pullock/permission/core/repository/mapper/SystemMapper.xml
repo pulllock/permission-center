@@ -1,45 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="fun.pullock.permission.core.dao.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="fun.pullock.permission.core.dao.model.UserDO">
+<mapper namespace="fun.pullock.permission.core.repository.mapper.SystemMapper">
+  <resultMap id="BaseResultMap" type="fun.pullock.permission.core.repository.model.SystemDO">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
     <result column="modifier_id" jdbcType="BIGINT" property="modifierId" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="version" jdbcType="INTEGER" property="version" />
-    <result column="user_id" jdbcType="BIGINT" property="userId" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, creator_id, modifier_id, create_time, update_time, version, user_id, email, name, 
-    password, status
+    id, creator_id, modifier_id, create_time, update_time, version, code, name, description
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from user
+    from `system`
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from user
+    delete from `system`
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="fun.pullock.permission.core.dao.model.UserDO">
-    insert into user (id, creator_id, modifier_id, 
+  <insert id="insert" parameterType="fun.pullock.permission.core.repository.model.SystemDO">
+    insert into `system` (id, creator_id, modifier_id,
       create_time, update_time, version, 
-      user_id, email, name, 
-      password, status)
+      code, name, description
+      )
     values (#{id,jdbcType=BIGINT}, #{creatorId,jdbcType=BIGINT}, #{modifierId,jdbcType=BIGINT}, 
       #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{version,jdbcType=INTEGER}, 
-      #{userId,jdbcType=BIGINT}, #{email,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{password,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT})
+      #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="fun.pullock.permission.core.dao.model.UserDO">
-    insert into user
+  <insert id="insertSelective" parameterType="fun.pullock.permission.core.repository.model.SystemDO">
+    insert into `system`
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -59,20 +56,14 @@
       <if test="version != null">
         version,
       </if>
-      <if test="userId != null">
-        user_id,
-      </if>
-      <if test="email != null">
-        email,
+      <if test="code != null">
+        code,
       </if>
       <if test="name != null">
         name,
       </if>
-      <if test="password != null">
-        password,
-      </if>
-      <if test="status != null">
-        status,
+      <if test="description != null">
+        description,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -94,25 +85,19 @@
       <if test="version != null">
         #{version,jdbcType=INTEGER},
       </if>
-      <if test="userId != null">
-        #{userId,jdbcType=BIGINT},
-      </if>
-      <if test="email != null">
-        #{email,jdbcType=VARCHAR},
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=SMALLINT},
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="fun.pullock.permission.core.dao.model.UserDO">
-    update user
+  <update id="updateByPrimaryKeySelective" parameterType="fun.pullock.permission.core.repository.model.SystemDO">
+    update `system`
     <set>
       <if test="creatorId != null">
         creator_id = #{creatorId,jdbcType=BIGINT},
@@ -129,43 +114,48 @@
       <if test="version != null">
         version = #{version,jdbcType=INTEGER},
       </if>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=BIGINT},
-      </if>
-      <if test="email != null">
-        email = #{email,jdbcType=VARCHAR},
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
       </if>
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        status = #{status,jdbcType=SMALLINT},
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="fun.pullock.permission.core.dao.model.UserDO">
-    update user
+  <update id="updateByPrimaryKey" parameterType="fun.pullock.permission.core.repository.model.SystemDO">
+    update `system`
     set creator_id = #{creatorId,jdbcType=BIGINT},
       modifier_id = #{modifierId,jdbcType=BIGINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       version = #{version,jdbcType=INTEGER},
-      user_id = #{userId,jdbcType=BIGINT},
-      email = #{email,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      status = #{status,jdbcType=SMALLINT}
+      description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 
-  <select id="selectByEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
+  <update id="updateByPrimaryKeyWithVersion" parameterType="fun.pullock.permission.core.repository.model.SystemDO">
+    update `system`
+    set creator_id = #{creatorId,jdbcType=BIGINT},
+        modifier_id = #{modifierId,jdbcType=BIGINT},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        version = version + 1,
+        code = #{code,jdbcType=VARCHAR},
+        name = #{name,jdbcType=VARCHAR},
+        description = #{description,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT} and version = #{version,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByCode" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from user
-    where email = #{email,jdbcType=VARCHAR}
+    from `system`
+    where code = #{code,jdbcType=VARCHAR}
   </select>
 </mapper>

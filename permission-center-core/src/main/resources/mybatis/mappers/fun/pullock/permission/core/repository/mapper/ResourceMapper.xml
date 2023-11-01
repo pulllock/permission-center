@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="fun.pullock.permission.core.dao.mapper.ResourceMapper">
-  <resultMap id="BaseResultMap" type="fun.pullock.permission.core.dao.model.ResourceDO">
+<mapper namespace="fun.pullock.permission.core.repository.mapper.ResourceMapper">
+  <resultMap id="BaseResultMap" type="fun.pullock.permission.core.repository.model.ResourceDO">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
     <result column="modifier_id" jdbcType="BIGINT" property="modifierId" />
@@ -31,7 +31,7 @@
     delete from resource
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="fun.pullock.permission.core.dao.model.ResourceDO">
+  <insert id="insert" parameterType="fun.pullock.permission.core.repository.model.ResourceDO">
     insert into resource (id, creator_id, modifier_id, 
       create_time, update_time, version, 
       code, name, description, 
@@ -43,7 +43,7 @@
       #{type,jdbcType=SMALLINT}, #{systemCode,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
       #{level,jdbcType=INTEGER}, #{parentId,jdbcType=BIGINT})
   </insert>
-  <insert id="insertSelective" parameterType="fun.pullock.permission.core.dao.model.ResourceDO">
+  <insert id="insertSelective" parameterType="fun.pullock.permission.core.repository.model.ResourceDO">
     insert into resource
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -134,7 +134,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="fun.pullock.permission.core.dao.model.ResourceDO">
+  <update id="updateByPrimaryKeySelective" parameterType="fun.pullock.permission.core.repository.model.ResourceDO">
     update resource
     <set>
       <if test="creatorId != null">
@@ -179,7 +179,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="fun.pullock.permission.core.dao.model.ResourceDO">
+  <update id="updateByPrimaryKey" parameterType="fun.pullock.permission.core.repository.model.ResourceDO">
     update resource
     set creator_id = #{creatorId,jdbcType=BIGINT},
       modifier_id = #{modifierId,jdbcType=BIGINT},

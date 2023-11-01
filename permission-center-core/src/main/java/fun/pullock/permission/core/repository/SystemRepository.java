@@ -1,12 +1,12 @@
-package fun.pullock.permission.core.dao;
+package fun.pullock.permission.core.repository;
 
-import fun.pullock.permission.core.dao.mapper.SystemMapper;
-import fun.pullock.permission.core.dao.model.SystemDO;
+import fun.pullock.permission.core.repository.mapper.SystemMapper;
+import fun.pullock.permission.core.repository.model.SystemDO;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class SystemDao {
+public class SystemRepository {
 
     @Resource
     private SystemMapper systemMapper;

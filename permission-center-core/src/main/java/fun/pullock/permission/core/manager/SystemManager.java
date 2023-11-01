@@ -1,7 +1,7 @@
 package fun.pullock.permission.core.manager;
 
-import fun.pullock.permission.core.dao.SystemDao;
-import fun.pullock.permission.core.dao.model.SystemDO;
+import fun.pullock.permission.core.repository.SystemRepository;
+import fun.pullock.permission.core.repository.model.SystemDO;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Component;
 
@@ -9,21 +9,21 @@ import org.springframework.stereotype.Component;
 public class SystemManager {
 
     @Resource
-    private SystemDao systemDao;
+    private SystemRepository systemRepository;
 
     public SystemDO queryById(Long id) {
-        return systemDao.queryById(id);
+        return systemRepository.queryById(id);
     }
 
     public SystemDO queryByCode(String code) {
-        return systemDao.queryByCode(code);
+        return systemRepository.queryByCode(code);
     }
 
     public Boolean add(SystemDO newSystem) {
-        return systemDao.add(newSystem);
+        return systemRepository.add(newSystem);
     }
 
     public Boolean update(SystemDO systemDO) {
-        return systemDao.update(systemDO);
+        return systemRepository.update(systemDO);
     }
 }

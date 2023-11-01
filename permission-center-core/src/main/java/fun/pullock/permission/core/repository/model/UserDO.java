@@ -1,9 +1,9 @@
-package fun.pullock.permission.core.dao.model;
+package fun.pullock.permission.core.repository.model;
 
 import java.time.LocalDateTime;
 
-public class UserRoleDO {
-
+public class UserDO {
+    
     private Long id;
 
     private Long creatorId;
@@ -14,9 +14,17 @@ public class UserRoleDO {
 
     private LocalDateTime updateTime;
 
+    private Integer version;
+
     private Long userId;
 
-    private String roleCode;
+    private String email;
+
+    private String name;
+
+    private String password;
+
+    private Integer status;
 
     public Long getId() {
         return id;
@@ -58,6 +66,14 @@ public class UserRoleDO {
         this.updateTime = updateTime;
     }
 
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
     public Long getUserId() {
         return userId;
     }
@@ -66,11 +82,35 @@ public class UserRoleDO {
         this.userId = userId;
     }
 
-    public String getRoleCode() {
-        return roleCode;
+    public String getEmail() {
+        return email;
     }
 
-    public void setRoleCode(String roleCode) {
-        this.roleCode = roleCode;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

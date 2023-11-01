@@ -1,8 +1,8 @@
-package fun.pullock.permission.core.dao.model;
+package fun.pullock.permission.core.repository.model;
 
 import java.time.LocalDateTime;
 
-public class UserDO {
+public class ResourceDO {
     
     private Long id;
 
@@ -16,15 +16,21 @@ public class UserDO {
 
     private Integer version;
 
-    private Long userId;
-
-    private String email;
+    private String code;
 
     private String name;
 
-    private String password;
+    private String description;
 
-    private Integer status;
+    private Integer type;
+
+    private String systemCode;
+
+    private String url;
+
+    private Integer level;
+
+    private Long parentId;
 
     public Long getId() {
         return id;
@@ -74,20 +80,12 @@ public class UserDO {
         this.version = version;
     }
 
-    public Long getUserId() {
-        return userId;
+    public String getCode() {
+        return code;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getName() {
@@ -98,19 +96,51 @@ public class UserDO {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getType() {
+        return type;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
+    public String getSystemCode() {
+        return systemCode;
+    }
+
+    public void setSystemCode(String systemCode) {
+        this.systemCode = systemCode;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 }

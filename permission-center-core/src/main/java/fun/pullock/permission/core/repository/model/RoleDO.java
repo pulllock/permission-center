@@ -1,8 +1,8 @@
-package fun.pullock.permission.core.dao.model;
+package fun.pullock.permission.core.repository.model;
 
 import java.time.LocalDateTime;
 
-public class SystemDO {
+public class RoleDO {
 
     private Long id;
 

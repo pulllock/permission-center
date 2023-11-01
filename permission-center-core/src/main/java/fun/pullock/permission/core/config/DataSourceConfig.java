@@ -4,6 +4,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan(basePackages = {"fun.pullock.permission.core.dao.mapper"})
+@MapperScan(basePackages = {"fun.pullock.permission.core.repository.mapper"})
 public class DataSourceConfig {
 }

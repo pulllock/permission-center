@@ -1,6 +1,6 @@
-package fun.pullock.permission.core.dao.mapper;
+package fun.pullock.permission.core.repository.mapper;
 
-import fun.pullock.permission.core.dao.model.UserRoleDO;
+import fun.pullock.permission.core.repository.model.UserRoleDO;
 
 public interface UserRoleMapper {
     int deleteByPrimaryKey(Long id);

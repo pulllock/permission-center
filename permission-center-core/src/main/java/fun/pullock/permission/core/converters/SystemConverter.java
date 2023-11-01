@@ -1,6 +1,6 @@
 package fun.pullock.permission.core.converters;
 
-import fun.pullock.permission.core.dao.model.SystemDO;
+import fun.pullock.permission.core.repository.model.SystemDO;
 import fun.pullock.permission.core.model.admin.SystemAddParam;
 import fun.pullock.permission.core.model.admin.SystemUpdateParam;
 import fun.pullock.permission.core.model.admin.SystemVO;

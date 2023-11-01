@@ -28,15 +28,15 @@
 
         <!-- targetPackage 生成的实体类所在的包 -->
         <!-- targetProject 生成的实体类所在的硬盘位置 -->
-        <javaModelGenerator targetPackage="fun.pullock.permission.core.dao.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="fun.pullock.permission.core.repository.model" targetProject="src/main/java">
         </javaModelGenerator>
 
         <!-- targetPackage和targetProject生成的mapper文件的包和位置 -->
-        <sqlMapGenerator targetPackage="mybatis/mappers/fun/pullock/permission/core/dao/mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mybatis/mappers/fun/pullock/permission/core/repository/mapper" targetProject="src/main/resources">
         </sqlMapGenerator>
 
         <!-- targetPackage和targetProject生成的mapper文件的包和位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="fun.pullock.permission.core.dao.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="fun.pullock.permission.core.repository.mapper"
                              targetProject="src/main/java">
         </javaClientGenerator>
 

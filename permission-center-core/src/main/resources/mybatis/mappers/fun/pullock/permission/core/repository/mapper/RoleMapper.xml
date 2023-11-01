@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="fun.pullock.permission.core.dao.mapper.SystemMapper">
-  <resultMap id="BaseResultMap" type="fun.pullock.permission.core.dao.model.SystemDO">
+<mapper namespace="fun.pullock.permission.core.repository.mapper.RoleMapper">
+  <resultMap id="BaseResultMap" type="fun.pullock.permission.core.repository.model.RoleDO">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
     <result column="modifier_id" jdbcType="BIGINT" property="modifierId" />
@@ -18,15 +18,15 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from `system`
+    from role
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from `system`
+    delete from role
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="fun.pullock.permission.core.dao.model.SystemDO">
-    insert into `system` (id, creator_id, modifier_id,
+  <insert id="insert" parameterType="fun.pullock.permission.core.repository.model.RoleDO">
+    insert into role (id, creator_id, modifier_id, 
       create_time, update_time, version, 
       code, name, description
       )
@@ -35,8 +35,8 @@
       #{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="fun.pullock.permission.core.dao.model.SystemDO">
-    insert into `system`
+  <insert id="insertSelective" parameterType="fun.pullock.permission.core.repository.model.RoleDO">
+    insert into role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -96,8 +96,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="fun.pullock.permission.core.dao.model.SystemDO">
-    update `system`
+  <update id="updateByPrimaryKeySelective" parameterType="fun.pullock.permission.core.repository.model.RoleDO">
+    update role
     <set>
       <if test="creatorId != null">
         creator_id = #{creatorId,jdbcType=BIGINT},
@@ -126,8 +126,8 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="fun.pullock.permission.core.dao.model.SystemDO">
-    update `system`
+  <update id="updateByPrimaryKey" parameterType="fun.pullock.permission.core.repository.model.RoleDO">
+    update role
     set creator_id = #{creatorId,jdbcType=BIGINT},
       modifier_id = #{modifierId,jdbcType=BIGINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -138,24 +138,4 @@
       description = #{description,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-
-  <update id="updateByPrimaryKeyWithVersion" parameterType="fun.pullock.permission.core.dao.model.SystemDO">
-    update `system`
-    set creator_id = #{creatorId,jdbcType=BIGINT},
-        modifier_id = #{modifierId,jdbcType=BIGINT},
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-        version = version + 1,
-        code = #{code,jdbcType=VARCHAR},
-        name = #{name,jdbcType=VARCHAR},
-        description = #{description,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=BIGINT} and version = #{version,jdbcType=INTEGER}
-  </update>
-
-  <select id="selectByCode" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from `system`
-    where code = #{code,jdbcType=VARCHAR}
-  </select>
 </mapper>

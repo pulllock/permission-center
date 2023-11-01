@@ -1,9 +1,9 @@
-package fun.pullock.permission.core.dao.model;
+package fun.pullock.permission.core.repository.model;
 
 import java.time.LocalDateTime;
 
-public class ResourceDO {
-    
+public class SystemDO {
+
     private Long id;
 
     private Long creatorId;
@@ -21,16 +21,6 @@ public class ResourceDO {
     private String name;
 
     private String description;
-
-    private Integer type;
-
-    private String systemCode;
-
-    private String url;
-
-    private Integer level;
-
-    private Long parentId;
 
     public Long getId() {
         return id;
@@ -102,45 +92,5 @@ public class ResourceDO {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
-    }
-
-    public String getSystemCode() {
-        return systemCode;
-    }
-
-    public void setSystemCode(String systemCode) {
-        this.systemCode = systemCode;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
-    }
-
-    public Long getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
     }
 }

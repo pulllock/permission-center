@@ -1,4 +1,4 @@
-package fun.pullock.permission.core.dao.model;
+package fun.pullock.permission.core.repository.model;
 
 import java.time.LocalDateTime;
 
