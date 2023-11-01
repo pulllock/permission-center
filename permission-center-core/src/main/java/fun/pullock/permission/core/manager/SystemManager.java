@@ -22,4 +22,8 @@ public class SystemManager {
     public Boolean add(SystemDO newSystem) {
         return systemDao.add(newSystem);
     }
+
+    public Boolean update(SystemDO systemDO) {
+        return systemDao.update(systemDO);
+    }
 }

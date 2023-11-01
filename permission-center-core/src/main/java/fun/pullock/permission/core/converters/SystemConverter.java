@@ -2,6 +2,7 @@ package fun.pullock.permission.core.converters;
 
 import fun.pullock.permission.core.dao.model.SystemDO;
 import fun.pullock.permission.core.model.admin.SystemAddParam;
+import fun.pullock.permission.core.model.admin.SystemUpdateParam;
 import fun.pullock.permission.core.model.admin.SystemVO;
 
 import java.time.LocalDateTime;
@@ -34,5 +35,12 @@ public class SystemConverter {
         target.setUpdateTime(target.getCreateTime());
         target.setVersion(1);
         return target;
+    }
+
+    public static void updateSystemDO(SystemDO old, SystemUpdateParam param, Long operatorId) {
+        old.setName(param.getName());
+        old.setDescription(param.getDescription());
+        old.setUpdateTime(LocalDateTime.now());
+        old.setModifierId(operatorId);
     }
 }

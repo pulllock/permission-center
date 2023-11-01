@@ -22,6 +22,12 @@ public enum ErrorCode implements BaseErrorCode {
     SYSTEM_ADD_CODE_NULL(101, 2, 2, "新增业务系统编码为空"),
     SYSTEM_ADD_NAME_NULL(101, 2, 3, "新增业务系统名称为空"),
     SYSTEM_ADD_CODE_DUPLICATE(101, 2, 4, "新增业务系统编码重复"),
+
+    SYSTEM_UPDATE_PARAM_NULL(101, 2, 5, "更新业务系统参数为空"),
+    SYSTEM_UPDATE_INVALID_ID(101, 2, 6, "更新业务系统无效的ID"),
+    SYSTEM_UPDATE_NAME_NULL(101, 2, 7, "更新业务系统名称为空"),
+    SYSTEM_UPDATE_FAILED(101, 2, 8, "更新业务系统失败"),
+    SYSTEM_UPDATE_INVALID_VERSION(101, 2, 8, "更新业务系统无效的版本号"),
     ;
 
     static final int PERMISSION_CENTER_SYSTEM_CODE = 1000;

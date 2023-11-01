@@ -139,6 +139,19 @@
     where id = #{id,jdbcType=BIGINT}
   </update>
 
+  <update id="updateByPrimaryKeyWithVersion" parameterType="fun.pullock.permission.core.dao.model.SystemDO">
+    update `system`
+    set creator_id = #{creatorId,jdbcType=BIGINT},
+        modifier_id = #{modifierId,jdbcType=BIGINT},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        version = version + 1,
+        code = #{code,jdbcType=VARCHAR},
+        name = #{name,jdbcType=VARCHAR},
+        description = #{description,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT} and version = #{version,jdbcType=INTEGER}
+  </update>
+
   <select id="selectByCode" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />

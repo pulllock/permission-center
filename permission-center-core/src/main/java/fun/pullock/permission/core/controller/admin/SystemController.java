@@ -4,6 +4,7 @@ import fun.pullock.general.model.Result;
 import fun.pullock.general.model.ServiceException;
 import fun.pullock.permission.core.model.ErrorCode;
 import fun.pullock.permission.core.model.admin.SystemAddParam;
+import fun.pullock.permission.core.model.admin.SystemUpdateParam;
 import fun.pullock.permission.core.model.admin.SystemVO;
 import fun.pullock.permission.core.service.SystemService;
 import jakarta.annotation.Resource;
@@ -37,5 +38,26 @@ public class SystemController extends AdminBaseController {
         }
 
         return new Result<>(systemService.add(param, operator()));
+    }
+
+    @PostMapping("/update")
+    public Result<Boolean> update(@RequestBody SystemUpdateParam param) {
+        if (param == null) {
+            throw new ServiceException(ErrorCode.SYSTEM_UPDATE_PARAM_NULL);
+        }
+
+        if (param.getId() == null || param.getId() <= 0) {
+            throw new ServiceException(ErrorCode.SYSTEM_UPDATE_INVALID_ID);
+        }
+
+        if (param.getVersion() == null || param.getVersion() <= 0) {
+            throw new ServiceException(ErrorCode.SYSTEM_UPDATE_INVALID_VERSION);
+        }
+
+        if (StringUtils.isEmpty(param.getName())) {
+            throw new ServiceException(ErrorCode.SYSTEM_UPDATE_NAME_NULL);
+        }
+
+        return new Result<>(systemService.update(param, operator()));
     }
 }

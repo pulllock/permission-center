@@ -16,5 +16,7 @@ public interface SystemMapper {
 
     int updateByPrimaryKey(SystemDO row);
 
+    int updateByPrimaryKeyWithVersion(SystemDO row);
+
     SystemDO selectByCode(String code);
 }

@@ -22,4 +22,8 @@ public class SystemDao {
     public Boolean add(SystemDO newSystem) {
         return systemMapper.insert(newSystem) == 1;
     }
+
+    public Boolean update(SystemDO systemDO) {
+        return systemMapper.updateByPrimaryKeyWithVersion(systemDO) == 1;
+    }
 }
