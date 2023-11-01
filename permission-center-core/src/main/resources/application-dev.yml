@@ -25,8 +25,3 @@ mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath:mybatis/mappers/fun/pullock/permission/core/repository/mapper/*.xml
   type-aliases-package: fun.pullock.permission.core.repository.model
-
-general:
-  starter:
-    log:
-      enable: true
