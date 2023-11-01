@@ -3,7 +3,7 @@ package fun.pullock.permission.core.controller.admin;
 import fun.pullock.general.model.Result;
 import fun.pullock.general.model.ServiceException;
 import fun.pullock.permission.core.model.ErrorCode;
-import fun.pullock.permission.core.model.admin.LoginParam;
+import fun.pullock.permission.core.model.admin.param.LoginParam;
 import fun.pullock.permission.core.service.AuthService;
 import jakarta.annotation.Resource;
 import org.apache.commons.lang3.StringUtils;

@@ -1,9 +1,9 @@
 package fun.pullock.permission.core.converters;
 
 import fun.pullock.permission.core.repository.model.SystemDO;
-import fun.pullock.permission.core.model.admin.SystemAddParam;
-import fun.pullock.permission.core.model.admin.SystemUpdateParam;
-import fun.pullock.permission.core.model.admin.SystemVO;
+import fun.pullock.permission.core.model.admin.param.SystemAddParam;
+import fun.pullock.permission.core.model.admin.param.SystemUpdateParam;
+import fun.pullock.permission.core.model.admin.vo.SystemVO;
 
 import java.time.LocalDateTime;
 

@@ -1,10 +1,10 @@
 package fun.pullock.permission.core.service;
 
 import fun.pullock.general.model.ServiceException;
-import fun.pullock.permission.core.repository.model.UserDO;
-import fun.pullock.permission.core.manager.UserManager;
 import fun.pullock.permission.core.model.ErrorCode;
-import fun.pullock.permission.core.model.admin.LoginParam;
+import fun.pullock.permission.core.model.admin.param.LoginParam;
+import fun.pullock.permission.core.repository.UserRepository;
+import fun.pullock.permission.core.repository.model.UserDO;
 import fun.pullock.permission.core.session.AdminSessionUtils;
 import fun.pullock.permission.core.session.SessionUtils;
 import jakarta.annotation.Resource;
@@ -14,10 +14,10 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     @Resource
-    private UserManager userManager;
+    private UserRepository userRepository;
 
     public Boolean login(LoginParam param) {
-        UserDO userDO = userManager.queryByEmail(param.getEmail());
+        UserDO userDO = userRepository.queryByEmail(param.getEmail());
         if (userDO == null) {
             throw new ServiceException(ErrorCode.AUTH_LOGIN_USER_NOT_EXIST);
         }

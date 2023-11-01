@@ -1,4 +1,4 @@
-package fun.pullock.permission.core.model.admin;
+package fun.pullock.permission.core.model.admin.param;
 
 public class LoginParam {
 
